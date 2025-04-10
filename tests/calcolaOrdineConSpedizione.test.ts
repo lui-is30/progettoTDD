@@ -26,3 +26,17 @@ test("6. calcolo prodotto + spese di spedizione", () => {
     totale: 1245.0, 
   });
 });
+
+test("7. calcolo della sola spedizione", () => {
+    const articoli: any[] = [];
+    const speseSpedizione = 10.0;
+  
+    const risultato = calcolaOrdineConSpedizione(articoli, speseSpedizione);
+  
+    expect(risultato).toEqual({
+      imponibile: 0,
+      iva: 0,
+      speseSpedizione: 10.0,
+      totale: 10.0,
+    });
+  });

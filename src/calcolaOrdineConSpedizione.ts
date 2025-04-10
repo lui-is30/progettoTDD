@@ -12,7 +12,7 @@ export const calcolaOrdineConSpedizione = (articoli:Articolo[], speseSpedizione:
   }
 
   const totaleParziale = totaleImponibile + totaleIVA;
-  const totale = totaleParziale + speseSpedizione;
+  const totale = totaleParziale;
 
   return {
     imponibile: parseFloat(totaleImponibile.toFixed(2)),
