@@ -13,11 +13,7 @@ export const calcolaOrdine = (articoli: Articolo[]) => {
       let totaleIVA = 0;
     
       for (const articolo of articoli) {
-        if (articolo.iva === 0) {
-            totaleImponibile += 0;  // Errore intenzionale: non calcoliamo correttamente l'imponibile per l'articolo con IVA 0%
-        } else {
-            totaleImponibile += articolo.imponibile;
-        }
+        totaleImponibile += articolo.imponibile; 
         if (articolo.iva > 0) {  
             totaleIVA += articolo.imponibile * (articolo.iva / 100);
         }
