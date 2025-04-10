@@ -8,5 +8,18 @@ export const calcolaOrdine = (articoli: Articolo[]) => {
           totale: 0,
         };
       }
-  return {};
+
+      let totaleImponibile = 0;
+      let totaleIVA = 0;
+    
+      for (const articolo of articoli) {
+        totaleImponibile += articolo.imponibile;
+        totaleIVA += articolo.imponibile * (articolo.iva / 100);
+      }
+    
+      return {
+        imponibile: parseFloat(totaleImponibile.toFixed(2)),
+        iva: parseFloat(totaleIVA.toFixed(2)),
+        totale: parseFloat((totaleImponibile + totaleIVA).toFixed(2)),
+      };
 }
