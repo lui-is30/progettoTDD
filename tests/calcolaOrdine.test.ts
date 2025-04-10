@@ -45,3 +45,26 @@ test("1. Array vuoto", () => {
       totale: 10.0,
     });
   });
+
+  test("4. calcolo imponibile", () => {
+    const articoli = [
+      {
+        nome: "PC",
+        imponibile: 1000.0,
+        iva: 22,
+      },
+      {
+        nome: "MOUSE",
+        imponibile: 10.0,
+        iva: 0,
+      },
+    ];
+  
+    const risultato = calcolaOrdine(articoli);
+  
+    expect(risultato).toEqual({
+      imponibile: 1010.0,  
+      iva: 220.0,         
+      totale: 1230.0
+    });
+  });
