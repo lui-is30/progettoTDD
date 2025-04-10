@@ -27,3 +27,21 @@ test("1. Array vuoto", () => {
       totale: 1220.0,
     });
   });
+
+  test("3. articoli esenti da IVA", () => {
+    const articoli = [
+      {
+        nome: "MOUSE",
+        imponibile: 10.0,
+        iva: 0,
+      },
+    ];
+  
+    const risultato = calcolaOrdine(articoli);
+  
+    expect(risultato).toEqual({
+      imponibile: 10.0,
+      iva: 0.0,
+      totale: 10.0,
+    });
+  });
